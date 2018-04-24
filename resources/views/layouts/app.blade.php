@@ -8,10 +8,25 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title') | Airbnb</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+        body {
+            color: #565a5c;
+            background-color: #F8F8F8;
+        }
+        .navbar-default {
+            background-color: #FFFFFF;
+        }
+
+        .navbar-default .navbar-brand {
+            color: #FF5A5F;
+            font-size: 2em;
+            font-weight: 400;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -29,7 +44,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        Airbnb
                     </a>
                 </div>
 
@@ -71,7 +86,11 @@
             </div>
         </nav>
 
-        @yield('content')
+        <div class="container">
+            <div class="row">
+                @yield('content')
+            </div>
+        </div>
     </div>
 
     <!-- Scripts -->

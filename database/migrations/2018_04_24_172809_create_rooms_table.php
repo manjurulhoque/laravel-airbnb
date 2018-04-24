@@ -25,12 +25,12 @@ class CreateRoomsTable extends Migration
             $table->integer('bath_room');
             $table->integer('price');
             $table->text('summary');
-            $table->boolean('is_tv');
-            $table->boolean('is_kitchen');
-            $table->boolean('is_heating');
-            $table->boolean('is_internet');
-            $table->boolean('active');
-            $table->boolean('is_air');
+            $table->boolean('is_tv')->default(0);
+            $table->boolean('is_kitchen')->default(0);
+            $table->boolean('is_heating')->default(0);
+            $table->boolean('is_internet')->default(0);
+            $table->boolean('active')->default(0);
+            $table->boolean('is_air')->default(0);
             $table->timestamps();
         });
     }
