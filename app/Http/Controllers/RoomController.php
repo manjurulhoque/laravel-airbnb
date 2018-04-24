@@ -3,17 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RoomCreateRequest;
+use App\Photo;
 use App\Room;
 use Illuminate\Http\Request;
 use Auth;
+use Image;
 
 class RoomController extends Controller
 {
-    private $room;
+    private $room, $photo;
 
-    function __construct(Room $room)
+    function __construct(Room $room, Photo $photo)
     {
         $this->room = $room;
+        $this->photo = $photo;
     }
 
     public function create()
@@ -41,6 +44,18 @@ class RoomController extends Controller
         $this->room->active = $request->active ? true : false;
         $this->room->price = $request->price;
 
-        $this->room->save();
+        if ($request->hasFile('images')) {
+            $this->room->save();
+            $room_id = $this->room->id;
+            foreach ($request->images as $image) {
+                $filename = $image->getClientOriginalName();
+                $location = public_path('images/rooms/' . $filename);
+                Image::make($image)->resize(800, 400)->save($location);
+                $photo = new Photo;
+                $photo->name = $filename;
+                $photo->room_id = $room_id;
+                $photo->save();
+            }
+        }
     }
 }

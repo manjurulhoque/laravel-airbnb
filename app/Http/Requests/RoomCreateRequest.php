@@ -33,6 +33,7 @@ class RoomCreateRequest extends FormRequest
             'summary' => 'required',
             'address' => 'required',
             'price' => 'required',
+            'images' => 'required',
         ];
     }
 }

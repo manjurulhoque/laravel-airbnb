@@ -9,4 +9,9 @@ class Room extends Model
     protected $fillable = ['home_type', 'room_type', 'accommodate', 'bed_room', 'bath_room', 'listing_name', 'summary', 'address', 'price' .
         'is_tv', 'is_kitchen', 'is_heating', 'is_internet', 'is_air', 'active',
     ];
+
+    public function photos()
+    {
+        return $this->hasMany(Photo::class);
+    }
 }
