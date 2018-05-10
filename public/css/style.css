@@ -1,0 +1,7 @@
+.panel-heading.preview {
+    padding: 0;
+}
+
+.panel-heading.preview img {
+    width: 100%;
+}

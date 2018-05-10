@@ -14,4 +14,14 @@ class Room extends Model
     {
         return $this->hasMany(Photo::class);
     }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

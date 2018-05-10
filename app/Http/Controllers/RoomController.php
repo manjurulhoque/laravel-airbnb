@@ -33,6 +33,7 @@ class RoomController extends Controller
         $this->room->bed_room = $request->bed_room;
         $this->room->bath_room = $request->bath_room;
         $this->room->listing_name = $request->listing_name;
+        $this->room->slug = str_slug($request->listing_name);
         $this->room->summary = $request->summary;
         $this->room->address = $request->address;
         $this->room->is_tv = $request->get('is_tv') ? true : false;
@@ -57,5 +58,10 @@ class RoomController extends Controller
                 $photo->save();
             }
         }
+    }
+
+    public function show(Room $room)
+    {
+        return view('rooms.show', compact('room'));
     }
 }

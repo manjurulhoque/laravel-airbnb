@@ -1,23 +1,95 @@
 @extends('layouts.app')
 
+@section('title')Home @endsection
+
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+    <div class="container">
+        <div class="row">
+            <form action="">
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="text" placeholder="Where are you going?" class="form-control" name="search">
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" placeholder="Start Date" class="form-control" name="start_date">
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" placeholder="End Date" class="form-control" name="end_date">
+                    </div>
+                    <div class="col-md-2">
+                        <input type="submit" class="btn btn-primary" value="Search">
+                    </div>
+                </div>
+            </form>
 
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
+            <hr>
+
+            <div class="text-center">
+                <h2>Just for the weekend</h2>
+                <p>Discover new, inspiring places close to home.</p>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <a href="">
+                        <div class="discovery-card" style="background-image: url('/assets/New_York.jpg')">
+                            <div class="va-container">
+                                <div class="va-middle text-center">
+                                    <h2><strong>New York</strong></h2>
+                                </div>
+                            </div>
                         </div>
-                    @endif
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <a href="">
+                        <div class="discovery-card" style="background-image: url('/assets/San_Francisco.jpg')">
+                            <div class="va-container">
+                                <div class="va-middle text-center">
+                                    <h2><strong>San Francisco</strong></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <a href="">
+                        <div class="discovery-card" style="background-image: url('/assets/Chicago.jpg')">
+                            <div class="va-container">
+                                <div class="va-middle text-center">
+                                    <h2><strong>Chicago</strong></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
 
-                    You are logged in!
+                <br>
+
+                <div class="text-center">
+                    <h2>Explore the world</h2>
+                    <p>See where people are travelling, all around the world.</p>
+                </div>
+
+                <br>
+
+                <div class="row">
+                    @foreach($rooms as $room)
+                        <div class="col-md-4">
+                            <div class="panel panel-default">
+                                <div class="panel-heading preview">
+                                    <img src="{{ asset("images/rooms/".$room->photos[0]->name) }}">
+                                </div>
+                                <div class="panel-body">
+                                    <a href="">{{ $room->listing_name }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
