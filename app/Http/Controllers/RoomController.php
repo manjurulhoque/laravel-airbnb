@@ -6,7 +6,7 @@ use App\Http\Requests\RoomCreateRequest;
 use App\Photo;
 use App\Room;
 use Illuminate\Http\Request;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Image;
 
 class RoomController extends Controller
@@ -17,6 +17,13 @@ class RoomController extends Controller
     {
         $this->room = $room;
         $this->photo = $photo;
+    }
+
+    public function index()
+    {
+        $rooms = Auth::user()->rooms;
+
+        return view('rooms.index', compact('rooms'));
     }
 
     public function create()

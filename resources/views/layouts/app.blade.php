@@ -80,6 +80,12 @@
 
                             <ul class="dropdown-menu">
                                 <li>
+                                    <a href="{{ route('rooms') }}">Your Listings</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('profile') }}">Edit Profile</a>
+                                </li>
+                                <li>
                                     <a href="{{ route('profile') }}">Edit Profile</a>
                                 </li>
                                 <li>
