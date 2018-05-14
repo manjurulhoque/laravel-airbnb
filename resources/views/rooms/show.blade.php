@@ -62,10 +62,9 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <!-- Reservation form -->
+                    @include('layouts.reservation-form')
                 </div>
             </div>
-
 
             <!-- About -->
             <div class="row">
