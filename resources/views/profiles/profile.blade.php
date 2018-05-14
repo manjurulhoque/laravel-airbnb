@@ -19,7 +19,7 @@
                 <div class="panel-heading">Your Profile</div>
                 <div class="panel-body">
                     <div class="container">
-                        <form action="" method="post">
+                        <form action="{{ route('profile.update') }}" method="post">
                             <div class="form-group">
                                 <input type="text" name="fullname" autofocus placeholder="Full name"
                                        class="form-control">
