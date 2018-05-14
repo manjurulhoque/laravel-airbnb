@@ -33,8 +33,8 @@
 
             <div class="row">
                 <div class="col-md-4 col-sm-12">
-                    <a href="">
-                        <div class="discovery-card" style="background-image: url('/assets/New_York.jpg')">
+                    <a href="#">
+                        <div class="discovery-card" style="background-image: url({{ asset('/images/New_York.jpeg') }})">
                             <div class="va-container">
                                 <div class="va-middle text-center">
                                     <h2><strong>New York</strong></h2>
@@ -45,7 +45,7 @@
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <a href="">
-                        <div class="discovery-card" style="background-image: url('/assets/San_Francisco.jpg')">
+                        <div class="discovery-card" style="background-image: url({{ asset('/images/San_Francisco.jpeg') }})">
                             <div class="va-container">
                                 <div class="va-middle text-center">
                                     <h2><strong>San Francisco</strong></h2>
@@ -56,7 +56,7 @@
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <a href="">
-                        <div class="discovery-card" style="background-image: url('/assets/Chicago.jpg')">
+                        <div class="discovery-card" style="background-image: url({{ asset('/images/Chicago.jpeg') }})">
                             <div class="va-container">
                                 <div class="va-middle text-center">
                                     <h2><strong>Chicago</strong></h2>
