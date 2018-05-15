@@ -12,6 +12,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('rooms', 'RoomController@index')->name('rooms');
     Route::post('reservations/store', 'ReservationController@store')->name('reservation.store');
+    Route::get('your_reservations', 'ReservationController@your_reservations')->name('your-reservations');
 });
 
 Route::get('/', 'HomeController@index')->name('home');

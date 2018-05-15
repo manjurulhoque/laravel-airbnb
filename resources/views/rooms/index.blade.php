@@ -7,8 +7,8 @@
     <div class="row">
         <div class="col-md-3">
             <ul class="sidebar-list">
-                <li class="sidebar-item">Your Listing</li>
-                <li class="sidebar-item">Your Reservations</li>
+                <li class="sidebar-item active"><a href="{{ route('rooms') }}">Your Listing</a></li>
+                <li class="sidebar-item"><a href="{{ route('your-reservations') }}">Your Reservations</a></li>
                 <li class="sidebar-item"><a href="#">Your Trips</a></li>
             </ul>
         </div>

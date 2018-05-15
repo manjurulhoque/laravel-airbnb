@@ -85,7 +85,7 @@
                                     <a href="{{ route('rooms') }}">Your Listings</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('profile') }}">Edit Profile</a>
+                                    <a href="{{ route('your-reservations') }}">Your Reservations</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('profile') }}">Edit Profile</a>
