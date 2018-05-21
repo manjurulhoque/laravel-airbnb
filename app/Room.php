@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Room extends Model
 {
@@ -28,5 +29,10 @@ class Room extends Model
     public function reservations()
     {
         return $this->hasMany(Reservation::class);
+    }
+
+    public function wish()
+    {
+        return (boolean)(Wishlist::where('room_id', $this->id)->where('user_id', Auth::id())->first());
     }
 }

@@ -81,16 +81,29 @@
                 </div>
                 <div class="col-md-10">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <ul class="amenities">
                                 <li class="{{ $room->is_tv == false ? 'text-line-through' : ''  }}">TV</li>
                                 <li class="{{ $room->is_kitchen == false ? 'text-line-through' : ''  }}">Kitchen</li>
                                 <li class="{{ $room->is_internet == false ? 'text-line-through' : ''  }}">Internet</li>
                             </ul>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <li class="{{ $room->is_heating == false ? 'text-line-through' : ''  }}">Heating</li>
                             <li class="{{ $room->is_air == false ? 'text-line-through' : ''  }}">Air Conditioning</li>
+                        </div>
+                        <div class="col-md-4">
+                            <form action="{{ route('add-to-wishlist') }}" method="post">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="room_id" value="{{ $room->id }}">
+                                @if(!$room->wish())
+                                    <input type="hidden" name="islisted" value="0">
+                                    <input type="submit" href="" class="btn btn-success" value="Add to wishlist"/>
+                                @else
+                                    <input type="hidden" name="islisted" value="1">
+                                    <input type="submit" href="" class="btn btn-danger" value="Remove from wishlist"/>
+                                @endif
+                            </form>
                         </div>
                     </div>
                 </div>
