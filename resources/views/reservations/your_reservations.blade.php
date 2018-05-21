@@ -11,7 +11,7 @@
                 <li class="sidebar-item">
                     <a href="{{ route('your-reservations') }}" class=" sidebar-link active">Your Reservations</a>
                 </li>
-                <li class="sidebar-item"><a href="#">Your Trips</a></li>
+                <li class="sidebar-item"><a href="{{ route('your-trips') }}">Your Trips</a></li>
             </ul>
         </div>
         <div class="col-md-9">
