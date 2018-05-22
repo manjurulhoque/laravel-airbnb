@@ -31,4 +31,11 @@ class UserController extends Controller
 
         return redirect()->route('rooms.show', $request->room_id)->with($notification);
     }
+
+    public function wishlists()
+    {
+        $wishlists = Auth::user()->wishlists;
+
+        return view('reservations.your_wishlist', compact('wishlists'));
+    }
 }

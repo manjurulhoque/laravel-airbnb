@@ -88,7 +88,7 @@
                                     <a href="{{ route('your-reservations') }}">Your Reservations</a>
                                 </li>
                                 <li>
-                                    <a href="#">Wish List</a>
+                                    <a href="{{ route('your-wishlist') }}">Wish List</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('profile') }}">Edit Profile</a>

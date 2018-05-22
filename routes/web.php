@@ -16,6 +16,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('your_trips', 'ReservationController@your_trips')->name('your-trips');
 
     // wish list
+    Route::get('your_wishlist', 'UserController@wishlists')->name('your-wishlist');
     Route::post('add_to_wishlist', 'UserController@make_wish')->name('add-to-wishlist');
 });
 
