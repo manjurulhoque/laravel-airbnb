@@ -83,6 +83,7 @@
                                     <img src="{{ asset("images/rooms/".$room->photos[0]->name) }}">
                                 </div>
                                 <div class="panel-body">
+                                    <img class="img-circle avatar-small" src="{{ Gravatar::get($room->user->email) }}" alt="">
                                     <a href="">{{ $room->listing_name }}</a>
                                 </div>
                             </div>

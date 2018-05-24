@@ -85,6 +85,9 @@
                                     <a href="{{ route('rooms') }}">Your Listings</a>
                                 </li>
                                 <li>
+                                    <a href="{{ route('rooms.create') }}">Add new listing</a>
+                                </li>
+                                <li>
                                     <a href="{{ route('your-reservations') }}">Your Reservations</a>
                                 </li>
                                 <li>
